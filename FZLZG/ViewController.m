@@ -10,9 +10,15 @@
 #import "DemoViewController.h"
 #import "Obj.h"
 
+/// `__attribute__((objc_boxable))`可以将基本类型包装成`NSNumber`对象
+typedef struct __attribute__((objc_boxable)) XXRect {
+  CGFloat x, y, w, h;
+} XXRect;
+
 typedef NS_ENUM(NSInteger, XXType){
   XXType1,
-  XXType2
+  XXType2,
+  XXType3
 };
 
 int sum(a, b, c)
@@ -20,6 +26,12 @@ int a, b; int c;
 {
   int s = ((void)(a + b), c);//逗号表达式，前面计算，结果=后面的: s = c
   return a + b + s;
+}
+
+//静态检查 enable_if
+static void printValidAge(int age)
+__attribute__((enable_if(age > 0 && age < 120, "你丫火星人？"))) {
+  printf("%d", age);
 }
 
 @interface ViewController ()
@@ -48,6 +60,7 @@ int a, b; int c;
   [self demo5];
   [self demo6];
   [self demo7];
+  [self demo8];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -75,13 +88,15 @@ int a, b; int c;
 //  CGRect rect1 = {1, 2, 3, 4};
 //  CGRect rect2 = {.origin.x=5, .size={10, 10}}; // {5, 0, 10, 10}
 //  CGRect rect3 = {1, 2}; // {1, 2, 0, 0}
+//  CGRect rect4 = {{2, 2}, {20, 20}};
 }
 
 - (void)demo3 {
   NSLog(@"DEMO3----------------------");
   const NSString *XXTypeNameMapping[] = {
     [XXType1] = @"Type1",
-    [XXType2] = @"Type2"
+    [XXType2] = @"Type2",
+    [XXType3] = @"Type3"
   };
   NSLog(@"enum string:%@", XXTypeNameMapping[XXType2]);
 }
@@ -92,19 +107,30 @@ int a, b; int c;
     NSLog(@"block1");
   };
   void(^block2)(int) = ^(int a) {
-    NSLog(@"block2");
+    NSLog(@"block2: %d", a);
   };
   void(^block3)(NSNumber *, NSString *) = ^(NSNumber *a, NSString *b) {
     NSLog(@"block3: %@, %@", a, b);
   };
 
-  void(^block)();
-  block = block1;
-  block = block2;
-  block = block3;
+  [self _test:XXType1 block:block1];
+  [self _test:XXType2 block:block2];
+  [self _test:XXType3 block:block3];
+}
 
-  block(@2, @"呵呵🙄");
-  block(@3, nil);
+/// `void(^)()` 泛型block
+- (void)_test:(XXType)type block:(void(^)())block {
+  switch (type) {
+    case XXType1:
+      block();
+      break;
+    case XXType2:
+      block(2);
+      break;
+    case XXType3:
+      block(@3, @"😝");
+      break;
+  }
 }
 
 - (void)demo5 {
@@ -149,6 +175,19 @@ case test:;\
   C_ASSERT(COUNT_PARMS(1, 2, 3, 4) == 4);
 }
 
+- (void)demo8 {
+  NSLog(@"DEMO8----------------------");
+  XXRect rect1 = (XXRect){0,  0, 100, 20};
+  XXRect rect2 = (XXRect){0, 30, 100, 20};
+  XXRect rect3 = (XXRect){0, 60, 100, 20};
+  NSArray *rects = @[@(rect1), @(rect2), @(rect3)];
+  [rects enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    XXRect rect;
+    [(NSValue *)obj getValue:&rect];
+    NSLog(@"rect:{%f, %f, %f, %f}", rect.x, rect.y, rect.w, rect.h);
+  }];
+}
+
 // 如果返回值、参数类型不写，默认是id类型
 - foo:arg {
   return @"哈哈，我没写类型";
@@ -164,7 +203,7 @@ case test:;\
 }
 
 
-
+#pragma mark -
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
   self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:NULL];
