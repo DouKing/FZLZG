@@ -17,7 +17,18 @@
 		00BA0A8A1F162A3B00889900 /* NSObject+Weak.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BA0A891F162A3B00889900 /* NSObject+Weak.m */; };
 		00BA0A8D1F162EDA00889900 /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BA0A8C1F162EDA00889900 /* DemoViewController.m */; };
 		00BA0A901F1635C600889900 /* Obj.m in Sources */ = {isa = PBXBuildFile; fileRef = 00BA0A8F1F1635C600889900 /* Obj.m */; };
+		00DF0DAE21ABF38D0037AE86 /* KVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00DF0DAD21ABF38D0037AE86 /* KVCTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00DF0DB021ABF38D0037AE86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00BA0A5D1F16276100889900 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00BA0A641F16276100889900;
+			remoteInfo = FZLZG;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		00BA0A651F16276100889900 /* FZLZG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FZLZG.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,10 +49,20 @@
 		00BA0A8C1F162EDA00889900 /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		00BA0A8E1F1635C600889900 /* Obj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obj.h; sourceTree = "<group>"; };
 		00BA0A8F1F1635C600889900 /* Obj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obj.m; sourceTree = "<group>"; };
+		00DF0DAB21ABF38D0037AE86 /* KVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00DF0DAD21ABF38D0037AE86 /* KVCTests.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = KVCTests.m; sourceTree = "<group>"; tabWidth = 4; };
+		00DF0DAF21ABF38D0037AE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		00BA0A621F16276100889900 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00DF0DA821ABF38D0037AE86 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				00BA0A671F16276100889900 /* FZLZG */,
+				00DF0DAC21ABF38D0037AE86 /* KVCTests */,
 				00BA0A661F16276100889900 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				00BA0A651F16276100889900 /* FZLZG.app */,
+				00DF0DAB21ABF38D0037AE86 /* KVCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +122,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		00DF0DAC21ABF38D0037AE86 /* KVCTests */ = {
+			isa = PBXGroup;
+			children = (
+				00DF0DAD21ABF38D0037AE86 /* KVCTests.m */,
+				00DF0DAF21ABF38D0037AE86 /* Info.plist */,
+			);
+			path = KVCTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,6 +151,24 @@
 			productReference = 00BA0A651F16276100889900 /* FZLZG.app */;
 			productType = "com.apple.product-type.application";
 		};
+		00DF0DAA21ABF38D0037AE86 /* KVCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00DF0DB221ABF38D0037AE86 /* Build configuration list for PBXNativeTarget "KVCTests" */;
+			buildPhases = (
+				00DF0DA721ABF38D0037AE86 /* Sources */,
+				00DF0DA821ABF38D0037AE86 /* Frameworks */,
+				00DF0DA921ABF38D0037AE86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00DF0DB121ABF38D0037AE86 /* PBXTargetDependency */,
+			);
+			name = KVCTests;
+			productName = KVCTests;
+			productReference = 00DF0DAB21ABF38D0037AE86 /* KVCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -132,6 +182,12 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = K2VBE95LX6;
 						ProvisioningStyle = Automatic;
+					};
+					00DF0DAA21ABF38D0037AE86 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = K2VBE95LX6;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 00BA0A641F16276100889900;
 					};
 				};
 			};
@@ -149,6 +205,7 @@
 			projectRoot = "";
 			targets = (
 				00BA0A641F16276100889900 /* FZLZG */,
+				00DF0DAA21ABF38D0037AE86 /* KVCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -161,6 +218,13 @@
 				00BA0A781F16276100889900 /* LaunchScreen.storyboard in Resources */,
 				00BA0A751F16276100889900 /* Assets.xcassets in Resources */,
 				00BA0A731F16276100889900 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		00DF0DA921ABF38D0037AE86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +245,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		00DF0DA721ABF38D0037AE86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00DF0DAE21ABF38D0037AE86 /* KVCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00DF0DB121ABF38D0037AE86 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 00BA0A641F16276100889900 /* FZLZG */;
+			targetProxy = 00DF0DB021ABF38D0037AE86 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		00BA0A711F16276100889900 /* Main.storyboard */ = {
@@ -321,6 +401,67 @@
 			};
 			name = Release;
 		};
+		00DF0DB321ABF38D0037AE86 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2VBE95LX6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KVCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = DouKing.KVCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FZLZG.app/FZLZG";
+			};
+			name = Debug;
+		};
+		00DF0DB421ABF38D0037AE86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2VBE95LX6;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = KVCTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = DouKing.KVCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FZLZG.app/FZLZG";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -340,6 +481,16 @@
 				00BA0A7E1F16276100889900 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		00DF0DB221ABF38D0037AE86 /* Build configuration list for PBXNativeTarget "KVCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00DF0DB321ABF38D0037AE86 /* Debug */,
+				00DF0DB421ABF38D0037AE86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

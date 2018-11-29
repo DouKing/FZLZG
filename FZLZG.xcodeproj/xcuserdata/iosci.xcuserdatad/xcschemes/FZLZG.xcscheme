@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00DF0D9C21ABF3660037AE86"
+               BuildableName = "FZLZGTests.xctest"
+               BlueprintName = "FZLZGTests"
+               ReferencedContainer = "container:FZLZG.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "00DF0DAA21ABF38D0037AE86"
+               BuildableName = "KVCTests.xctest"
+               BlueprintName = "KVCTests"
+               ReferencedContainer = "container:FZLZG.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
