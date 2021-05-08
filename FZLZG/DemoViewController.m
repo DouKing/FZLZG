@@ -9,6 +9,11 @@
 #import "DemoViewController.h"
 #import "Manager.h"
 
+// 强符号 会覆盖 弱符号
+void symbol1() {
+    NSLog(@"测试 symbol1");
+};
+
 @interface DemoViewController ()
 
 @property (nonatomic, strong) Manager *manager;
@@ -23,6 +28,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  symbol1();
   self.view.backgroundColor = [UIColor whiteColor];
   self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:NULL];
   self.title = [NSString stringWithFormat:@"%p", self];
